@@ -1,41 +1,119 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: sans-serif;
-  line-height: 1.6em;
+    font-family: sans-serif;
+    line-height: 1.6em;
 }
 
 .subtask {
-  margin: 20px 0;
-  border: 1px solid lightblue;
-  border-radius: 8px;
-  padding: 16px;
+    margin: 20px 0;
+    border: 1px solid lightblue;
+    border-radius: 8px;
+    padding: 16px;
 }
 
 ul {
-  padding: 0;
-  margin: 0;
-  font-family: sans-serif;
-  color: white;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    color: white;
 }
 
 ul > li {
-  list-style-type: none;
-  padding: 20px;
-  float: left;
-  background-color: lightpink;
-  width: calc(100%/6);
+    list-style-type: none;
+    padding: 20px;
+    float: left;
+    background-color: lightpink;
+    width: calc(100%/6);
 }
 
 ul > li img {
-  margin: 0 auto;
-  display: block;
+    margin: 0 auto;
+    display: block;
 }
 
 .clearfix {
-  clear: both;
+    clear: both;
 }
 
+
 /* Вашият CSS от тук надолу */
+
+
+/* 1 a */
+
+@media (max-width: 399px) {
+    ul > li {
+        width: calc(100%/1);
+    }
+}
+
+@media (min-width: 400px) and (max-width: 599px) {
+    ul > li {
+        width: calc(100%/2);
+    }
+}
+
+@media (min-width: 600px) and (max-width: 999px) {
+    ul > li {
+        width: calc(100%/3);
+    }
+}
+
+@media (min-width: 1000px) {
+    ul > li {
+        width: calc(100%/6);
+    }
+}
+
+
+/* 1 b */
+
+#subtask2 ul > li:nth-child(even) {
+    background-color: lightblue;
+}
+
+
+/* 1 c */
+
+#subtask3 ul > li img:hover {
+    background-color: lightblue;
+    -ms-transform: rotateZ(180deg);
+    /* IE 9 */
+    -webkit-transform: rotateZ(180deg);
+    /* Chrome, Safari, Opera */
+    transform: rotateZ(180deg);
+    -webkit-transition-duration: 1s;
+    /* Safari */
+    transition-duration: 1s;
+}
+
+
+/* 1 d */
+
+#subtask4 li::before {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 221px;
+    height: 300px;
+    margin-left: -19px;
+    margin-top: -20px;
+}
+
+
+/* 1 e */
+#subtask5 li:hover::before {
+    content: "IMAGINE THAT!";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 221px;
+    height: 300px;
+    margin-left: -19px;
+    margin-top: -20px;
+}
